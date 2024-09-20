@@ -105,4 +105,4 @@ export const staticDB: Database = {
 
 export const dynamicDB: Database = genDatabase(10, 20);
 
-export const mocks = genMocks({ appointmentCount: 20 });
+export const mocks = genMocks({ appointmentCount: 100 });
