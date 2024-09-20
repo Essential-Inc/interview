@@ -1,6 +1,6 @@
 import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { ScheduleCard } from "./ScheduleCard";
+import { ScheduleCard, ScheduleCardProps } from "./ScheduleCard";
 import {
   Select,
   SelectContent,
@@ -80,12 +80,7 @@ const App = () => {
       </div>
       <div className="flex flex-col mx-4">
         <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-4">
-          <ScheduleCard
-            workerId={"e22acc40"}
-            customerAddress={"330 S Front Street, Hellerbury, 10057"}
-            customerName={"Bernice Batz"}
-            startTime={dayjs().toISOString()}
-          />
+          {data?.map((d: ScheduleCardProps) => <ScheduleCard {...d} />)}
         </div>
       </div>
     </div>

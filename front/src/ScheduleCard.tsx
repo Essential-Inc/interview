@@ -1,18 +1,20 @@
 import { CircleCheckIcon, CircleIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import dayjs from "dayjs";
 
 export type ScheduleCardProps = {
   workerId: string;
-  customerAddress: string;
-  customerName: string;
-  startTime: string;
+  customerId: string;
+  customerName?: string;
+  address: string;
+  start: string;
 };
 
 export const ScheduleCard = ({
   workerId,
-  customerAddress,
+  address,
   customerName,
-  startTime,
+  start,
 }: ScheduleCardProps) => {
   const isCompleted = false;
 
@@ -27,7 +29,7 @@ export const ScheduleCard = ({
       <div className="p-4">
         <div className="flex flex-row justify-between my-4">
           <div className="flex flex-col items-start">
-            <div>{startTime}</div>
+            <div>Time: {dayjs(start).format("YYYY-MM-DD HH:00")}</div>
           </div>
           <button>{isCompleted ? <CircleCheckIcon /> : <CircleIcon />}</button>
         </div>
@@ -45,7 +47,7 @@ export const ScheduleCard = ({
             <div className="text-gray-600 mt-2 font-semibold">
               Customer Address:
             </div>
-            <div>{customerAddress}</div>
+            <div>{address}</div>
           </div>
         </div>
       </div>
