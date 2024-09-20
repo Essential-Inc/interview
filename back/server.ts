@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import { staticDB, dynamicDB } from "./data";
+import { staticDB, dynamicDB, mocks } from "./data";
 
-const db = dynamicDB;
+const db = staticDB;
 
 // Create Express app
 const app = express();
@@ -26,6 +26,10 @@ app.get("/workers", (req: Request, res: Response) => {
 
 app.get("/data", (req: Request, res: Response) => {
   res.json(db);
+});
+
+app.get("/mocks", (req: Request, res: Response) => {
+  res.json(mocks);
 });
 
 // Start server

@@ -60,8 +60,7 @@ const TodoCount = () => {
 const App = () => {
   const { data } = useQuery({
     queryKey: ["data"],
-    queryFn: async () =>
-      (await fetch("http://localhost:9999/schedules")).json(),
+    queryFn: async () => (await fetch("http://localhost:9999/mocks")).json(),
   });
 
   useEffect(() => {

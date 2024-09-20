@@ -9,24 +9,27 @@ export const genAddress = () =>
   `${faker.location.streetAddress()}, ${faker.location.city()}, ${faker.location.zipCode()}`;
 export const genName = () => faker.person.fullName();
 
-const genTimeRange = (start: Date) => {
-  const duration = faker.number.int({ min: 1, max: 10 });
-  const roundedStart = dayjs(start)
+const genRecentHour = (props: Parameters<typeof faker.date.recent>[0]) => {
+  const date = faker.date.recent(props);
+  return dayjs(date)
     .set("millisecond", 0)
     .set("second", 0)
-    .set("minute", 0);
+    .set("minute", 0)
+    .toDate();
+};
+
+const genTimeRange = (start: Date) => {
+  const duration = faker.number.int({ min: 1, max: 10 });
   return {
-    start: roundedStart.toDate(),
-    end: roundedStart.add(duration, "hour").toDate(),
+    start,
+    end: dayjs(start).add(duration, "hour").toDate(),
   };
 };
 
 const genTimeRanges = (len: number) => {
   const starts = Array(len)
     .fill(0)
-    .map(() => {
-      return faker.date.recent({ days: 7 });
-    });
+    .map(() => genRecentHour({ days: 7 }));
 
   const availabilities = starts.map((start) => genTimeRange(start));
   return availabilities;
@@ -68,4 +71,55 @@ export const genDatabase = (min: number, max: number): Database => {
     workers,
     customers,
   };
+};
+
+export const genMocks = ({
+  appointmentCount,
+  workerCount,
+  customerCount,
+}: {
+  appointmentCount: number;
+  workerCount?: number;
+  customerCount?: number;
+}) => {
+  const workerIds = Array(faker.number.int({ min: 1, max: workerCount ?? 10 }))
+    .fill(0)
+    .map(genId);
+
+  const customerIds = Array(
+    faker.number.int({ min: 1, max: customerCount ?? 10 }),
+  )
+    .fill(0)
+    .map(genId);
+
+  const customerAddresses = customerIds.reduce(
+    (acc, id) => ({ ...acc, [id]: genAddress() }),
+    {} as Record<string, string>,
+  );
+
+  const customerNames = customerIds.reduce(
+    (acc, id) => ({ ...acc, [id]: genName() }),
+    {} as Record<string, string>,
+  );
+
+  const appointments = Array(appointmentCount)
+    .fill(0)
+    .map(() => {
+      const workerId =
+        workerIds[faker.number.int({ min: 0, max: workerIds.length - 1 })];
+      const [customerId, address] =
+        faker.helpers.objectEntry(customerAddresses);
+      const customerName = customerNames[customerId];
+      const start = genRecentHour({ days: 7 });
+
+      return {
+        workerId,
+        customerId,
+        customerName,
+        address,
+        start,
+      };
+    });
+
+  return appointments;
 };
