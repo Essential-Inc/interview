@@ -69,7 +69,7 @@ const App = () => {
 
   return (
     <div className="min-h-svh">
-      <div className="sticky top-0 z-50 flex flex-row items-center p-4">
+      <div className="flex flex-row items-center p-4">
         <div className="text-xl text-gray-900">Essential Interview</div>
       </div>
       <div className="flex flex-row justify-end gap-10 mx-10">
