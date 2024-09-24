@@ -8,8 +8,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./components/ui/select";
-import dayjs from "dayjs";
 import { useEffect } from "react";
+import { getSchedules } from "./query";
 
 type SortOrder = "asc" | "desc";
 
@@ -59,8 +59,8 @@ const TodoCount = () => {
 
 const App = () => {
   const { data } = useQuery({
-    queryKey: ["data"],
-    queryFn: async () => (await fetch("http://localhost:9999/mocks")).json(),
+    queryKey: ["schedules"],
+    queryFn: getSchedules,
   });
 
   useEffect(() => {

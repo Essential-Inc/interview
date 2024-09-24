@@ -7,7 +7,7 @@ export type ScheduleCardProps = {
   customerId: string;
   customerName?: string;
   address: string;
-  start: string;
+  start: Date;
 };
 
 export const ScheduleCard = ({
