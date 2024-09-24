@@ -1,4 +1,6 @@
 export type TimeRange = {
+  // Inclusive of start
+  // Exclusive of end
   start: Date;
   end: Date;
 };
@@ -12,8 +14,8 @@ export type WorkerAvailability = {
 export type CustomerPreference = {
   customerId: string;
   customerName: string;
-  preferences: TimeRange[];
   address: string;
+  availability: TimeRange[];
 };
 
 export type Database = {

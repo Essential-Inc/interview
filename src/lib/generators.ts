@@ -4,7 +4,7 @@ import {
   CustomerPreference,
   Database,
   WorkerAvailability,
-} from "@/types";
+} from "@/interview-scheduling/types";
 import dayjs from "dayjs";
 
 faker.seed(5852264571544052);
@@ -58,7 +58,7 @@ export const genCustomerPreference = (): CustomerPreference => {
   return {
     customerId: genId(),
     customerName: genName(),
-    preferences,
+    availability: preferences,
     address: genAddress(),
   };
 };
@@ -78,7 +78,7 @@ export const genDatabase = (min: number, max: number): Database => {
   };
 };
 
-export const genMocks = ({
+export const genAppointmentMocks = ({
   appointmentCount,
   workerCount,
   customerCount,

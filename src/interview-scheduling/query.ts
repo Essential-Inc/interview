@@ -1,4 +1,4 @@
-import { appointmentMocks } from "@/data";
+import { appointmentMocks } from "@/interview-scheduling/data";
 import { Appointment } from "./types";
 
 //   export type TimeRange = {

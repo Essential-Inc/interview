@@ -2,10 +2,10 @@ import {
   genAddress,
   genDatabase,
   genId,
-  genMocks as genAppointmentMocks,
+  genAppointmentMocks,
   genName,
-} from "@/generators";
-import { Database } from "@/types";
+} from "@/lib/generators";
+import { Database } from "@/interview-scheduling/types";
 import { parseISO } from "date-fns";
 
 export const appointmentMocks = genAppointmentMocks({ appointmentCount: 100 });
@@ -56,7 +56,7 @@ export const sample: Database = {
       customerId: genId(),
       customerName: genName(),
       address: genAddress(),
-      preferences: [
+      availability: [
         {
           start: parseISO("2025-01-03T11:00:00Z"),
           end: parseISO("2025-01-03T12:00:00Z"),
@@ -71,7 +71,7 @@ export const sample: Database = {
       customerId: genId(),
       customerName: genName(),
       address: genAddress(),
-      preferences: [
+      availability: [
         {
           start: parseISO("2025-01-03T18:00:00Z"),
           end: parseISO("2025-01-03T19:00:00Z"),
@@ -90,7 +90,7 @@ export const sample: Database = {
       customerId: genId(),
       customerName: genName(),
       address: genAddress(),
-      preferences: [
+      availability: [
         {
           start: parseISO("2025-01-04T10:00:00Z"),
           end: parseISO("2025-01-04T11:00:00Z"),

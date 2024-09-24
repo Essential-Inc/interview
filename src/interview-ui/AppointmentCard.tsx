@@ -2,7 +2,7 @@ import { CircleCheckIcon, CircleIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import dayjs from "dayjs";
 
-export type ScheduleCardProps = {
+export type AppointmentCardProps = {
   workerId: string;
   customerId: string;
   customerName?: string;
@@ -10,12 +10,12 @@ export type ScheduleCardProps = {
   start: Date;
 };
 
-export const ScheduleCard = ({
+export const AppointmentCard = ({
   workerId,
   address,
   customerName,
   start,
-}: ScheduleCardProps) => {
+}: AppointmentCardProps) => {
   const isCompleted = false;
 
   return (
