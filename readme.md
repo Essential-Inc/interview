@@ -2,6 +2,8 @@
 
 You are writing a scheduling app that schedules workers and customers based on the workers' and customers' availability.
 
+**You are welcome to use any tools at your disposal to solve this problem set**
+
 ## Tasks
 
 ### Scheduling Appointments
