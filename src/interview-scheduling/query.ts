@@ -54,6 +54,9 @@ export const getSchedules = (): Appointment[] => {
 
   //// Please generate a list of `Appointment` structs that indicate all
   //// the appointments that have been scheduled between the employees and customers.
+
+  //// Output can be seen inside of the Javascript Debug Console inside of your browser when you run the React project.
+  //// `npm run dev`
   //// --------------
 
   // Large data to test on a full solution

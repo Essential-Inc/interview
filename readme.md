@@ -22,6 +22,14 @@ Customers need to be visited only one time by any employee and a single employee
 
 Please generate a list of `Appointment` structs that indicate all the appointments that have been scheduled between the employees and customers.
 
+#### Validating Output
+
+Output can be seen inside of the Javascript Debug Console inside of your browser when you run the React project.
+
+```
+npm run dev
+```
+
 ### Appointments UI
 
 Located in **`src/interview-ui`**
