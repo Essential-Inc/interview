@@ -36,7 +36,6 @@ import { Appointment } from "./types";
 // };
 
 export const getSchedules = (): Appointment[] => {
-
   //// --------------
   //// TODO: Implement this function
   //// The first task to complete is the scheduling of employees and customers.
@@ -55,10 +54,10 @@ export const getSchedules = (): Appointment[] => {
   //// --------------
 
   // Large data to test on a full solution
-  // const {worker, customer} = large;
+  // const {workers, customers} = large;
 
   // Sample data to develop an initial solution
-  const {worker, customer} = sample;
+  const { workers, customers } = sample;
 
   return appointmentMocks;
 };
