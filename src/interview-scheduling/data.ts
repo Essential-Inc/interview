@@ -61,6 +61,17 @@ export const sample: Database = {
           start: parseISO("2025-01-03T11:00:00Z"),
           end: parseISO("2025-01-03T12:00:00Z"),
         },
+      ],
+    },
+    {
+      customerId: genId(),
+      customerName: genName(),
+      address: genAddress(),
+      availabilities: [
+        {
+          start: parseISO("2025-01-03T11:00:00Z"),
+          end: parseISO("2025-01-03T12:00:00Z"),
+        },
         {
           start: parseISO("2025-01-03T13:00:00Z"),
           end: parseISO("2025-01-03T14:00:00Z"),
