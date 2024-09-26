@@ -1,7 +1,6 @@
 import {
   genAddress,
   genDatabase,
-  genId,
   genAppointmentMocks,
   genName,
 } from "@/lib/generators";
@@ -13,7 +12,7 @@ export const appointmentMocks = genAppointmentMocks({ appointmentCount: 100 });
 export const sample: Database = {
   workers: [
     {
-      workerId: genId(),
+      workerId: "w1",
       workerName: genName(),
       availabilities: [
         {
@@ -27,7 +26,7 @@ export const sample: Database = {
       ],
     },
     {
-      workerId: genId(),
+      workerId: "w2",
       workerName: genName(),
       availabilities: [
         {
@@ -41,7 +40,7 @@ export const sample: Database = {
       ],
     },
     {
-      workerId: genId(),
+      workerId: "w3",
       workerName: genName(),
       availabilities: [
         {
@@ -53,7 +52,7 @@ export const sample: Database = {
   ],
   customers: [
     {
-      customerId: genId(),
+      customerId: "c1",
       customerName: genName(),
       address: genAddress(),
       availabilities: [
@@ -64,7 +63,7 @@ export const sample: Database = {
       ],
     },
     {
-      customerId: genId(),
+      customerId: "c2",
       customerName: genName(),
       address: genAddress(),
       availabilities: [
@@ -79,7 +78,7 @@ export const sample: Database = {
       ],
     },
     {
-      customerId: genId(),
+      customerId: "c3",
       customerName: genName(),
       address: genAddress(),
       availabilities: [
@@ -98,7 +97,7 @@ export const sample: Database = {
       ],
     },
     {
-      customerId: genId(),
+      customerId: "c4",
       customerName: genName(),
       address: genAddress(),
       availabilities: [
