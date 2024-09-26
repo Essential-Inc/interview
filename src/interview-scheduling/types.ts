@@ -15,7 +15,7 @@ export type CustomerPreference = {
   customerId: string;
   customerName: string;
   address: string;
-  availability: TimeRange[];
+  availabilities: TimeRange[];
 };
 
 export type Database = {
