@@ -56,7 +56,7 @@ export const sample: Database = {
       customerId: genId(),
       customerName: genName(),
       address: genAddress(),
-      availability: [
+      availabilities: [
         {
           start: parseISO("2025-01-03T11:00:00Z"),
           end: parseISO("2025-01-03T12:00:00Z"),
@@ -71,7 +71,7 @@ export const sample: Database = {
       customerId: genId(),
       customerName: genName(),
       address: genAddress(),
-      availability: [
+      availabilities: [
         {
           start: parseISO("2025-01-03T18:00:00Z"),
           end: parseISO("2025-01-03T19:00:00Z"),
@@ -90,7 +90,7 @@ export const sample: Database = {
       customerId: genId(),
       customerName: genName(),
       address: genAddress(),
-      availability: [
+      availabilities: [
         {
           start: parseISO("2025-01-04T10:00:00Z"),
           end: parseISO("2025-01-04T11:00:00Z"),
