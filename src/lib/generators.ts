@@ -53,12 +53,12 @@ export const genWorkerAvailability = (): WorkerAvailability => {
 
 export const genCustomerPreference = (): CustomerPreference => {
   const numPreferences = faker.number.int({ min: 1, max: 20 });
-  const preferences = genTimeRanges(numPreferences);
+  const availabilities = genTimeRanges(numPreferences);
 
   return {
     customerId: genId(),
     customerName: genName(),
-    availability: preferences,
+    availabilities,
     address: genAddress(),
   };
 };
