@@ -11,7 +11,7 @@ import { getSchedules } from "../interview-scheduling";
 
 const App = () => {
   const { data } = useQuery({
-    queryKey: ["schedules"],
+    queryKey: ["schedules", Math.random()],
     queryFn: getSchedules,
   });
 
