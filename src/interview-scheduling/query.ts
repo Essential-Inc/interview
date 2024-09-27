@@ -54,6 +54,13 @@ export const getSchedules = (): Appointment[] => {
   //// Customers need to be visited only one time by any worker and a
   //// single worker can not visit multiple customers at the same time.
 
+  //// Example: If a worker's availability is from 10:00 - 12:00
+  ////          it means the worker is available for 2 appointments
+  ////          from 10:00 to 11:00 and 11:00 to 12:00
+  ////          If a customer's availability is from 10:00 - 11:00
+  ////          then we can book the worker's time for 10:00 - 11:00
+  ////          and the customer is considered visited.
+
   //// Please generate a list of `Appointment` structs that indicate all
   //// the appointments that have been scheduled between
   //// the workers and customers.
