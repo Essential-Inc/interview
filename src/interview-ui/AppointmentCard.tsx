@@ -17,6 +17,15 @@ export const AppointmentCard = ({
   start,
 }: AppointmentCardProps) => {
   const isCompleted = false;
+  const onClick = () => {
+    console.log(
+      "AppointmentCard Clicked",
+      workerId,
+      address,
+      customerName,
+      start,
+    );
+  };
 
   return (
     <div
@@ -31,7 +40,9 @@ export const AppointmentCard = ({
           <div className="flex flex-col items-start">
             <div>Time: {dayjs(start).format("YYYY-MM-DD HH:00")}</div>
           </div>
-          <button>{isCompleted ? <CircleCheckIcon /> : <CircleIcon />}</button>
+          <button onClick={onClick}>
+            {isCompleted ? <CircleCheckIcon /> : <CircleIcon />}
+          </button>
         </div>
         <div className="flex flex-col items-start">
           <div className="text-lg font-semibold text-gray-800">
