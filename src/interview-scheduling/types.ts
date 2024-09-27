@@ -5,13 +5,13 @@ export type TimeRange = {
   end: Date;
 };
 
-export type WorkerAvailability = {
+export type Worker = {
   workerId: string;
   workerName: string;
   availabilities: TimeRange[];
 };
 
-export type CustomerPreference = {
+export type Customer = {
   customerId: string;
   customerName: string;
   address: string;
@@ -19,8 +19,8 @@ export type CustomerPreference = {
 };
 
 export type Database = {
-  workers: WorkerAvailability[];
-  customers: CustomerPreference[];
+  workers: Worker[];
+  customers: Customer[];
 };
 
 export type Appointment = {

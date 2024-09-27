@@ -1,9 +1,9 @@
 import { faker } from "@faker-js/faker";
 import {
   Appointment,
-  CustomerPreference,
+  Customer,
   Database,
-  WorkerAvailability,
+  Worker,
 } from "@/interview-scheduling/types";
 import dayjs from "dayjs";
 
@@ -40,7 +40,7 @@ const genTimeRanges = (len: number) => {
   return availabilities;
 };
 
-export const genWorkerAvailability = (): WorkerAvailability => {
+export const genWorkerAvailability = (): Worker => {
   const numAvailabilities = faker.number.int({ min: 1, max: 20 });
   const availabilities = genTimeRanges(numAvailabilities);
 
@@ -51,7 +51,7 @@ export const genWorkerAvailability = (): WorkerAvailability => {
   };
 };
 
-export const genCustomerPreference = (): CustomerPreference => {
+export const genCustomerPreference = (): Customer => {
   const numPreferences = faker.number.int({ min: 1, max: 20 });
   const availabilities = genTimeRanges(numPreferences);
 
