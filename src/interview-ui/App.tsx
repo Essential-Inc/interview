@@ -9,7 +9,7 @@ import {
 } from ".";
 import { getSchedules } from "../interview-scheduling";
 
-const App = () => {
+export const App = () => {
   const { data } = useQuery({
     queryKey: ["schedules"],
     queryFn: getSchedules,
@@ -42,5 +42,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
