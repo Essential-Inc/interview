@@ -6,8 +6,8 @@ import {
   IncompleteAppointmentsCounter,
   SortToggle,
   WorkerFilter,
-} from "./interview-ui";
-import { getSchedules } from "./interview-scheduling";
+} from ".";
+import { getSchedules } from "../interview-scheduling";
 
 const App = () => {
   const { data } = useQuery({
