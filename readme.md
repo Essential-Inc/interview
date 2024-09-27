@@ -12,15 +12,27 @@ Located in **`src/interview-scheduling/query.ts`**
 
 The first task to complete is the scheduling of workers and customers.
 
-The data structure describing availability is a list of `TimeRange` structs, which describes the start and end of a range of time that an individual is available.
+The data structure describing availability is a list of
+`TimeRange` structs,
+which describes the start and end of a range of time that
+an individual is available.
 
-If there is at least a 1 hour overlap between any time ranges for a worker and a customer, then an appointment can be scheduled for that overlap period.
+If there is at least a 1 hour overlap between any time ranges
+for a worker and a customer,
+then an appointment can be scheduled for that overlap period.
 
 All appointments are exactly 1 hour long.
+Customers need to be visited only one time by any worker and a
+single worker can not visit multiple customers at the same time.
 
-Customers need to be visited only one time by any worker and a single worker can not visit multiple customers at the same time.
+Please generate a list of `Appointment` structs that indicate all
+the appointments that have been scheduled between
+the workers and customers.
 
-Please generate a list of `Appointment` structs that indicate all the appointments that have been scheduled between the workers and customers.
+Output can be seen inside of the Javascript Debug Console
+inside of your browser when you run the React project.
+
+`npm run dev`
 
 #### Validating Output
 
