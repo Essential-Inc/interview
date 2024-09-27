@@ -60,6 +60,6 @@ For the `Appointment` struct, we would like to display it in a simple scheduling
 The app must have the following capabilities:
 
 1. `AppointmentCard`s are togglable onClick. When clicked, they toggle their `isCompleted` status.
-2. `IncompleteAppointmentsCount` should give a count of all the appointments that are incomplete.
+2. `IncompleteAppointmentsCounter` should give a count of all the appointments that are incomplete.
 3. `SortToggle` should allow the user to sort the appointments by the `start` date, toggling between ascending and descending order.
 4. `WorkerFilter` should allow the user to select a particular worker they'd like to filter the schedule by.
