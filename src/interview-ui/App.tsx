@@ -37,15 +37,12 @@ export const App = () => {
       </div>
       <div className="flex flex-col mx-4">
         <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-4">
-          {data?.map((d) => (
+          {data?.map((appointment) => (
             <AppointmentCard
-              key={`appointment-card-${d.workerId}-${d.start}`}
+              key={`appointment-card-${appointment.workerId}-${appointment.start}`}
               isCompleted={false}
-              workerId={d.workerId}
-              customerId={d.customerId}
-              customerName={d.customerName}
-              address={d.address}
-              start={d.start}
+              appointment={appointment}
+              onClick={() => console.log(appointment)}
             />
           ))}
         </div>

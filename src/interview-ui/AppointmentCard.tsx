@@ -1,35 +1,22 @@
 import { CircleCheckIcon, CircleIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import dayjs from "dayjs";
+import { Appointment } from "@/interview-scheduling";
 
 export type AppointmentCardProps = {
-  workerId: string;
-  customerId: string;
-  customerName?: string;
-  address: string;
-  start: Date;
+  appointment: Appointment;
   isCompleted: boolean;
+  onClick?: () => void;
 };
 
 export const AppointmentCard = ({
-  workerId,
-  address,
-  customerName,
-  start,
+  appointment,
   isCompleted,
+  onClick,
 }: AppointmentCardProps) => {
-  const onClick = () => {
-    console.log(
-      "AppointmentCard Clicked",
-      workerId,
-      address,
-      customerName,
-      start,
-    );
-  };
-
   return (
     <div
+      onClick={onClick}
       className={cn(
         "transition-colors duration-200 ease-in-out",
         "max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden my-4 w-72 select-none cursor-pointer",
@@ -39,27 +26,27 @@ export const AppointmentCard = ({
       <div className="p-4">
         <div className="flex flex-row justify-between my-4">
           <div className="flex flex-col items-start">
-            <div>Time: {dayjs(start).format("YYYY-MM-DD HH:00")}</div>
+            <div>
+              Time: {dayjs(appointment.start).format("YYYY-MM-DD HH:00")}
+            </div>
           </div>
-          <button onClick={onClick}>
-            {isCompleted ? <CircleCheckIcon /> : <CircleIcon />}
-          </button>
+          <div>{isCompleted ? <CircleCheckIcon /> : <CircleIcon />}</div>
         </div>
         <div className="flex flex-col items-start">
           <div className="text-lg font-semibold text-gray-800">
-            Worker ID: {workerId}
+            Worker ID: {appointment.workerId}
           </div>
           <div className="flex flex-col items-start">
             <div className="text-gray-600 mt-2 font-semibold">
               Customer Name:
             </div>
-            <div>{customerName}</div>
+            <div>{appointment.customerName}</div>
           </div>
           <div className="flex flex-col items-start">
             <div className="text-gray-600 mt-2 font-semibold">
               Customer Address:
             </div>
-            <div>{address}</div>
+            <div>{appointment.address}</div>
           </div>
         </div>
       </div>
