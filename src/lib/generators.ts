@@ -126,7 +126,8 @@ export const genAppointmentMocks = ({
         start,
         end,
       };
-    });
+    })
+    .sort((a, b) => a.workerId.localeCompare(b.workerId));
 
   return appointments;
 };
