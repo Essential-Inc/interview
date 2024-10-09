@@ -26,7 +26,7 @@ export const App = () => {
         <div className="text-xl text-gray-900">Essential Interview</div>
       </div>
       <div className="flex flex-row justify-end gap-10 mx-10">
-        <IncompleteAppointmentsCounter />
+        <IncompleteAppointmentsCounter count={0} />
         <div className="flex flex-grow" />
         <WorkerFilter />
         <SortToggle />
