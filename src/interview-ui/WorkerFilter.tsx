@@ -15,9 +15,10 @@ export const WorkerFilter = () => {
           <SelectValue placeholder="Select Worker" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="one">Worker 1</SelectItem>
-          <SelectItem value="two">Worker 2</SelectItem>
-          <SelectItem value="three">Worker 3</SelectItem>
+          <SelectItem value="">----</SelectItem>
+          <SelectItem value="666666">666666</SelectItem>
+          <SelectItem value="777777">777777</SelectItem>
+          <SelectItem value="888888">888888</SelectItem>
         </SelectContent>
       </Select>
     </div>
