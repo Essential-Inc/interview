@@ -6,6 +6,19 @@ You are writing a scheduling app that schedules workers and customers based on t
 
 ## Tasks
 
+### Appointments UI
+
+Located in **`src/interview-ui/*.tsx`**
+
+For the `Appointment` struct, we would like to display it in a simple scheduling app.
+
+The app must have the following capabilities:
+
+1. `SortToggle` should allow the user to sort the appointments by the `start` date, toggling between ascending and descending order.
+2. `WorkerFilter` should allow the user to select a particular worker they'd like to filter the schedule by.
+3. `AppointmentCard`s are togglable onClick. When clicked, they toggle their `isCompleted` status.
+4. `IncompleteAppointmentsCounter` should give a count of all the appointments that are incomplete. The count should respect the `WorkerFilter` and the `isCompleted` status of the `AppointmentCard`. Meaning, if the worker filter removes some appointments from the display, then the `IncompleteAppointmentsCounter` will decrease and if an `AppointmentCard` is toggled as `isCompleted`, then the `IncompleteAppointmentsCounter` will also decrease.
+
 ### Scheduling Appointments
 
 Located in **`src/interview-scheduling/query.ts`**
@@ -34,32 +47,6 @@ Example: If a worker's availability is from 10:00 - 12:00
          and the customer is considered visited.
 ```
 
-Please generate a list of `Appointment` structs that indicate all
+Please create a pseudo code solution that would generate a list of
 the appointments that have been scheduled between
-the workers and customers.
-
-Output can be seen inside of the Javascript Debug Console
-inside of your browser when you run the React project.
-
-`npm run dev`
-
-#### Validating Output
-
-Output can be seen inside of the Javascript Debug Console inside of your browser when you run the React project.
-
-```
-npm run dev
-```
-
-### Appointments UI
-
-Located in **`src/interview-ui/*.tsx`**
-
-For the `Appointment` struct, we would like to display it in a simple scheduling app.
-
-The app must have the following capabilities:
-
-1. `AppointmentCard`s are togglable onClick. When clicked, they toggle their `isCompleted` status.
-2. `IncompleteAppointmentsCounter` should give a count of all the appointments that are incomplete. The count should respect the `WorkerFilter`.
-3. `SortToggle` should allow the user to sort the appointments by the `start` date, toggling between ascending and descending order.
-4. `WorkerFilter` should allow the user to select a particular worker they'd like to filter the schedule by.
+the workers and customers, based on the time availabilities.
