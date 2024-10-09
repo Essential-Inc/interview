@@ -28,8 +28,12 @@ export const App = () => {
       <div className="flex flex-row justify-end gap-10 mx-10">
         <IncompleteAppointmentsCounter count={0} />
         <div className="flex flex-grow" />
-        <WorkerFilter />
-        <SortToggle />
+        <WorkerFilter
+          onSelect={(workerFilterSelection) =>
+            console.log(workerFilterSelection)
+          }
+        />
+        <SortToggle order={"desc"} />
       </div>
       <div className="flex flex-col mx-4">
         <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-4">

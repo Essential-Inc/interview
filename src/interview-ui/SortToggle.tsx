@@ -1,11 +1,13 @@
 import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon } from "lucide-react";
 export type SortOrder = "asc" | "desc";
 
-export const SortToggle = () => {
-  const order: SortOrder = "asc";
-  const onClick = () => {
-    console.log("SortToggle Clicked", order);
-  };
+export const SortToggle = ({
+  order,
+  onClick,
+}: {
+  order: SortOrder;
+  onClick?: () => void;
+}) => {
   return (
     <div
       onClick={onClick}
