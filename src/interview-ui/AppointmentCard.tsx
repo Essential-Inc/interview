@@ -8,6 +8,7 @@ export type AppointmentCardProps = {
   customerName?: string;
   address: string;
   start: Date;
+  isCompleted: boolean;
 };
 
 export const AppointmentCard = ({
@@ -15,8 +16,8 @@ export const AppointmentCard = ({
   address,
   customerName,
   start,
+  isCompleted,
 }: AppointmentCardProps) => {
-  const isCompleted = false;
   const onClick = () => {
     console.log(
       "AppointmentCard Clicked",

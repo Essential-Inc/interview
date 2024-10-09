@@ -36,6 +36,7 @@ export const App = () => {
           {data?.map((d) => (
             <AppointmentCard
               key={`appointment-card-${d.workerId}-${d.start}`}
+              isCompleted={false}
               workerId={d.workerId}
               customerId={d.customerId}
               customerName={d.customerName}
