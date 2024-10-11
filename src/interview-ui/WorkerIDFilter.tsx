@@ -10,7 +10,7 @@ type WorkerFilterProps = {
   onSelect: (workerId: string) => void;
 };
 
-export const WorkerFilter = ({ onSelect }: WorkerFilterProps) => {
+export const WorkerIDFilter = ({ onSelect }: WorkerFilterProps) => {
   return (
     <div className="flex flex-row items-center space-x-2 cursor-pointer select-none">
       <div className="text-sm text-gray-500">Filter by:</div>

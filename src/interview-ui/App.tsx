@@ -4,7 +4,7 @@ import {
   AppointmentCard,
   IncompleteAppointmentsCounter,
   SortToggle,
-  WorkerFilter,
+  WorkerIDFilter,
 } from ".";
 import { getSchedules } from "../interview-scheduling";
 
@@ -28,7 +28,7 @@ export const App = () => {
       <div className="flex flex-row justify-end gap-10 mx-10">
         <IncompleteAppointmentsCounter count={0} />
         <div className="flex flex-grow" />
-        <WorkerFilter
+        <WorkerIDFilter
           onSelect={(workerFilterSelection) =>
             console.log(workerFilterSelection)
           }
