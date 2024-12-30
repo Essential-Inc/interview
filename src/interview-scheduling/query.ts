@@ -75,7 +75,7 @@ export const getSchedules = (): Appointment[] => {
   // const {workers, customers} = large;
 
   // Sample data to develop an initial solution
-  const { workers, customers } = sample;
+  // const { workers, customers } = sample;
 
   return appointmentMocks;
 };
