@@ -8,9 +8,22 @@ You are writing a scheduling app that schedules workers and customers based on t
 
 ### Appointments UI
 
-Located in **`src/interview-ui/*.tsx`**
+> Located in **`src/interview-ui/*.tsx`**
 
-For the `Appointment` struct, we would like to display it in a simple scheduling app.
+We will be working with the following `Appointment` struct:
+
+```typescript
+export type Appointment = {
+  workerId: string;
+  customerId: string;
+  customerName?: string;
+  address: string;
+  start: Date;
+  end: Date;
+};
+```
+
+The data contained in the `Appointment` struct will be displayed in a simple scheduling app.
 
 The app must have the following capabilities:
 
